@@ -17,8 +17,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 include_once 'includes/class.init.php';
 
 
-add_action('plugins_loaded','wplms_eventon_translations');
-function wplms_eventon_translations(){
+add_action('plugins_loaded','bbp_cts_translations');
+function bbp_cts_translations(){
 	$locale = apply_filters("plugin_locale", get_locale(), 'bbpcts');
 	$lang_dir = dirname( __FILE__ ) . '/languages/';
 	$mofile        = sprintf( '%1$s-%2$s.mo', 'bbpcts', $locale );
