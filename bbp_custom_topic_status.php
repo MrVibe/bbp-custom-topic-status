@@ -10,3 +10,8 @@ License: GPLv2
 Text Domain: bbpcts
 Domain Path: /languages/
 */
+
+if ( !defined( 'ABSPATH' ) ) exit;
+
+
+include_once 'includes/class.init.php';
