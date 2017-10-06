@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPLMS EventOn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-06 14:38+0530\n"
+"PO-Revision-Date: 2017-10-06 14:39+0530\n"
+"Last-Translator: VibeThemes <vibethemes@gmail.com>\n"
+"Language-Team: VibeThemes <vibethemes@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/class.init.php:36 includes/class.init.php:47
+msgid "Support"
+msgstr ""
+
+#: includes/class.init.php:37 includes/class.init.php:48
+msgid "Resolved"
+msgstr ""
+
+#: includes/class.init.php:38 includes/class.init.php:49
+msgid "Bug"
+msgstr ""
+
+#: includes/class.init.php:39 includes/class.init.php:50
+msgid "In Progress"
+msgstr ""
+
+#: includes/class.init.php:40 includes/class.init.php:51
+msgid "Feature"
+msgstr ""
+
+#: includes/class.init.php:41 includes/class.init.php:52
+msgid "Idea"
+msgstr ""
+
+#: includes/class.init.php:42 includes/class.init.php:53
+msgid "Delivered"
+msgstr ""
+
+#: includes/class.init.php:43 includes/class.init.php:54
+msgid "Updated"
+msgstr ""
+
+#: includes/class.init.php:89
+msgid " Custom Topic Status:"
+msgstr ""
