@@ -23,9 +23,20 @@ class BBP_Custom_Topic_Status{
 		add_action('bbp_new_topic',array($this,'save_custom_topic_status'),2);
 		add_action('bbp_edit_topic',array($this,'save_custom_topic_status'),2);
 
-		add_action('bbp_theme_before_topic_title',array($this,'show_custom_topic_status'));
+		//add_action('bbp_theme_before_topic_title',array($this,'show_custom_topic_status'));
 
 		add_action('wp_enqueue_scripts',array($this,'custom_Status_styling'));
+		add_filter('bbp_get_topic_title',function($title){
+			global $post;
+			if($post->post_type =='topic'){
+				$status = get_post_meta($post->ID,'bbp_cts_status',true);
+				$statuses = $this->get_topic_statuses();
+				if(!empty($status)){
+					$title = '<span class="custom_topic_status '.$status.'">'.$statuses[$status].'</span>'.$title;
+				}
+			}
+			return $title;
+		});
 	}
 
 
@@ -108,7 +119,7 @@ class BBP_Custom_Topic_Status{
 	}
 
 	function save_custom_topic_status($topic_id, $forum_id){
-		if(isset($_POST['bbp_cts_status'])){
+		if(!empty($_POST['bbp_cts_status'])){
 			update_post_meta($topic_id,'bbp_cts_status',$_POST['bbp_cts_status']);
 		}
 	}
@@ -121,7 +132,7 @@ class BBP_Custom_Topic_Status{
 		if(isset($enabled)){
 			$status = get_post_meta($topic_id,'bbp_cts_status',true);
 			$statuses = $this->get_topic_statuses($forum_id);
-			if($status){
+			if(!empty($status)){
 				echo '<span class="custom_topic_status '.$status.'">'.$statuses[$status].'</span>';
 			}
 		}
@@ -136,14 +147,17 @@ class BBP_Custom_Topic_Status{
 		?>
 		<style>
 			.custom_topic_status {
-			    font-size:10px;letter-spacing:1px;
+			    letter-spacing:1px;
 			    text-transform:uppercase;
 			    font-weight:600;
 			    padding:1px 5px;
 			    border-radius:2px;
 			    background:#ddd;
-			    position:absolute;
+			    line-height:1;
+			    margin:0 5px 5px 0;
+			    font-size:60%;
 			}
+			
 			.custom_topic_status.support{
 				background:#2E60FF;
 				color:#fff;
